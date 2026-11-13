@@ -15,10 +15,19 @@ aplicación ya esté implementada ni que esté lista para producción.
 - Se leyó el documento maestro `Documento_Maestro_SaaS_Multiempresa_Ampliado.txt`.
 - Se inicializó una aplicación React + TypeScript + Vite en la rama `main`.
 - Según lo indicado por el propietario, Cloudflare Pages está conectado a GitHub.
-- Aún no están creados/configurados D1, R2 ni los bindings de la aplicación.
+- El UUID D1 que causaba el error de despliegue era un marcador provisional; se
+  retiró de `wrangler.jsonc`.
+- `wrangler.jsonc` queda como configuración base segura hasta que el dueño
+  autorice el aprovisionamiento y Wrangler obtenga IDs D1 reales.
+- `wrangler.local.jsonc` separa la configuración local; el UUID cero está
+  limitado al emulador local y no se incluye en configuración de producción.
+- Se preparó un script Wrangler idempotente para validar el proyecto Pages,
+  crear/reutilizar D1/R2 separados para producción y preview, escribir bindings
+  reales y aplicar migraciones SQL.
 - No se han creado credenciales ni recursos de infraestructura de Cloudflare.
-- El prototipo local no tiene backend ni autenticación: los datos de ejemplo y
-  los cambios de inventario se guardan en `localStorage` del navegador actual.
+- No se consultaron cuentas ni recursos Cloudflare remotos en esta sesión; hay
+  que correr el script con autorización del propietario para confirmar el
+  estado real y aprovisionar.
 
 ## Decisiones confirmadas
 
@@ -61,6 +70,10 @@ aplicación ya esté implementada ni que esté lista para producción.
   documentos.
 - **Un solo sitio:** Pages Functions se despliegan dentro del mismo proyecto y
   origen de Cloudflare Pages; no se creó un servicio independiente.
+- **Recursos actuales requeridos:** binding `DB` (D1) y `FILES` (R2).
+  `FILES` queda preparado para uso futuro; el código aún no sube imágenes.
+  No se requieren Workers separados, KV, Durable Objects, Queues u otros
+  recursos Cloudflare en esta fase.
 - **Alcance local implementado:** login/registro y operaciones API usan D1
   local al ejecutar Pages mediante Wrangler. En `npm run dev`, la interfaz usa
   datos demostrativos del navegador. La verificación/recuperación por correo,
@@ -158,6 +171,11 @@ estados semánticos separados.
 - [x] Verificar build y lint, alta/ajuste/recarga en UI, cookie de sesión,
       aislamiento entre dos tenants, rechazo CSRF y conflictos de stock
       concurrentes en el entorno local.
+- [x] Retirar el UUID provisional de la configuración Pages raíz.
+- [x] Separar la configuración Wrangler local y de Pages producción/preview.
+- [x] Crear un script con confirmación explícita que aprovisiona/reutiliza
+      D1/R2 con Wrangler, valida UUIDs reales, escribe bindings por entorno y
+      aplica migraciones sin borrar recursos.
 
 ## Tareas pendientes
 
@@ -167,9 +185,12 @@ estados semánticos separados.
 - [x] Configurar Pages Functions y binding D1 para desarrollo local con
       Wrangler. Esto no creó ni configuró recursos remotos.
 - [ ] Confirmar que el flujo de build/deploy de GitHub a `main` funciona.
-- [ ] Crear D1, R2 y los bindings remotos por entorno (desarrollo y producción).
+- [ ] Ejecutar con autorización el aprovisionamiento de D1/R2 y verificar IDs
+      reales para producción y preview.
 - [x] Añadir migración D1 inicial y configurar ejecución local.
 - [ ] Definir entornos/variables sin almacenar secretos en el repositorio.
+- [ ] Subir a GitHub el `wrangler.jsonc` resultante con IDs reales antes de
+      desplegar Pages Functions en producción.
 
 ### Primer hito funcional
 

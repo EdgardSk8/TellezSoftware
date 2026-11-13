@@ -5,9 +5,12 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "dev:pages": "npm run build && wrangler pages dev dist --port 8788",
+    "dev:pages": "npm run build && wrangler pages dev dist --config wrangler.local.jsonc --port 8788",
     "dev:stack": "npm run db:migrate:local && npm run dev:pages",
-    "db:migrate:local": "wrangler d1 migrations apply tellezsoftware-local --local",
+    "db:migrate:local": "wrangler d1 migrations apply tellezsoftware-local --local --config wrangler.local.jsonc",
+    "infra:plan": "node scripts/provision-cloudflare.mjs",
+    "infra:provision": "node scripts/provision-cloudflare.mjs --apply",
+    "infra:check": "node scripts/provision-cloudflare.mjs --check",
     "build": "tsc -b && tsc --noEmit -p tsconfig.worker.json && vite build",
     "lint": "oxlint",
     "preview": "vite preview"
