@@ -8,7 +8,7 @@ const root = process.cwd()
 const configPath = resolve(root, 'wrangler.jsonc')
 const projectName = process.env.CLOUDFLARE_PAGES_PROJECT ?? 'tellezsoftware'
 const names = {
-  productionDatabase: `${projectName}-production`,
+  productionDatabase: projectName,
   previewDatabase: `${projectName}-preview`,
   productionBucket: `${projectName}-files-production`,
   previewBucket: `${projectName}-files-preview`,

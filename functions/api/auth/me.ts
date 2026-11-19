@@ -9,8 +9,16 @@ export const onRequestGet: PagesFunction<Env> = async ({ request, env }) => {
     tenant: {
       id: session.tenantId,
       name: session.tenantName,
+      slug: session.tenantSlug,
       profile: session.profile,
+      businessType: session.businessType,
       currency: session.currency,
+      setupCompleted: Boolean(session.setupCompleted),
+      countryCode: session.countryCode,
+      city: session.city,
+      address: session.address,
+      trialStartedAt: session.trialStartedAt,
+      planTier: session.planTier,
       role: session.role,
     },
   })

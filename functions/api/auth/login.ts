@@ -44,8 +44,9 @@ export const onRequestPost: PagesFunction<Env> = async ({ request, env }) => {
            users.password_iterations, tenant_memberships.tenant_id
     FROM users
     JOIN tenant_memberships ON tenant_memberships.user_id = users.id
+    JOIN tenants ON tenants.id = tenant_memberships.tenant_id
     WHERE users.email = ?1
-    ORDER BY tenant_memberships.created_at ASC
+    ORDER BY tenant_memberships.created_at ASC, tenants.created_at ASC, tenants.name COLLATE NOCASE ASC
     LIMIT 1
   `).bind(email).first<UserPassword>()
 

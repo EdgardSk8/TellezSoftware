@@ -1,0 +1,5 @@
+# Credenciales de Google OAuth para desarrollo local con `wrangler pages dev`.
+# Copia este archivo como `.dev.vars` (está en .gitignore) y completa los valores.
+# Google Cloud Console → APIs & Services → Credentials → OAuth client (Web application).
+GOOGLE_CLIENT_ID=tu-client-id.apps.googleusercontent.com
+GOOGLE_CLIENT_SECRET=tu-client-secret

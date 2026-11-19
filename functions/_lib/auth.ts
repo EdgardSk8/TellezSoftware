@@ -1,15 +1,25 @@
 import { getCookie, fromHex, sha256, toHex } from './http'
+import type { BusinessType } from '../../shared/business-types'
 
 const SESSION_COOKIE = '__Host-tellez-session'
-const PASSWORD_ITERATIONS = 310_000
+// Workers limita PBKDF2 a 100.000 iteraciones (NotSupportedError por encima).
+const PASSWORD_ITERATIONS = 100_000
 const DUMMY_SALT = '8e94c02a5173f14109891a2d9f36ccab'
 
 export type AuthenticatedSession = {
   userId: string
   tenantId: string
   tenantName: string
+  tenantSlug: string
   profile: string
+  businessType: BusinessType
   currency: string
+  setupCompleted: number
+  countryCode: string | null
+  city: string | null
+  address: string | null
+  trialStartedAt: string | null
+  planTier: string
   role: string
   email: string
   emailVerified: number
@@ -33,7 +43,14 @@ export async function hashPassword(password: string): Promise<PasswordRecord> {
 
 export async function verifyPassword(password: string, saltHex: string, expectedHash: string, iterations: number): Promise<boolean> {
   const salt = fromHex(saltHex)
-  const actual = await derivePassword(password, salt, iterations)
+  let actual: Uint8Array
+  try {
+    actual = await derivePassword(password, salt, iterations)
+  } catch {
+    // El runtime de producción limita PBKDF2 a 100.000 iteraciones; un hash
+    // guardado con más solo puede verificarse en el emulador local.
+    return false
+  }
   const expected = fromHex(expectedHash)
   if (actual.length !== expected.length) return false
 
@@ -63,8 +80,18 @@ export async function getAuthenticatedSession(request: Request, db: D1Database):
   return db.prepare(`
     SELECT users.id AS userId, users.email, users.email_verified AS emailVerified,
            tenants.id AS tenantId,
-           tenants.name AS tenantName, tenants.inventory_profile AS profile,
-           tenants.currency, tenant_memberships.role
+           tenants.name AS tenantName, tenants.slug AS tenantSlug,
+           tenants.inventory_profile AS profile,
+           COALESCE(tenants.business_type, CASE tenants.inventory_profile
+             WHEN 'clothing' THEN 'clothing'
+             WHEN 'hardware' THEN 'hardware'
+             WHEN 'personal' THEN 'personal'
+             ELSE 'general'
+           END) AS businessType,
+           tenants.currency, tenants.setup_completed AS setupCompleted,
+           tenants.country AS countryCode, tenants.city, tenants.physical_address AS address,
+           tenants.trial_started_at AS trialStartedAt, tenants.plan_tier AS planTier,
+           tenant_memberships.role
     FROM sessions
     JOIN users ON users.id = sessions.user_id
     JOIN tenants ON tenants.id = sessions.tenant_id
