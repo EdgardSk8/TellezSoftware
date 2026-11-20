@@ -6,7 +6,7 @@
 
     <title>TellezSoftware — Apps for real businesses</title>
     <meta name="description" content="TellezSoftware builds apps for small and medium businesses. Our first product is Noubora Catalog: inventory and a public catalog in one place." />
-    <meta name="theme-color" content="#f5fefa" />
+    <meta name="theme-color" content="#f6fdfa" />
 
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="192x192" href="/icon-192.png" />
@@ -48,10 +48,10 @@
       </div>
     </header>
 
-    <main>
+    <main data-reveal-root>
       <section class="hero">
         <div class="wrap">
-          <div>
+          <div class="hero-copy" data-reveal style="--i: 0">
             <p class="eyebrow">Software company · Nicaragua</p>
             <h1>Software that solves real problems</h1>
             <p>
@@ -64,12 +64,66 @@
             </div>
             <p class="hero-note">Made in Nicaragua · Direct support from the team that builds the software</p>
           </div>
+
+          <div class="hero-visual" data-reveal style="--i: 1" aria-hidden="true">
+            <div class="ui-perspective preview">
+              <div class="preview-top">
+                <span class="preview-dot"></span>
+                <span class="preview-title">Noubora Catalog</span>
+                <span class="preview-pill">Available</span>
+              </div>
+              <div class="preview-grid">
+                <span class="preview-item">
+                  <span class="preview-thumb p1"></span>
+                  <span class="preview-line"></span>
+                  <span class="preview-line short"></span>
+                  <span class="preview-price">C$ 450</span>
+                </span>
+                <span class="preview-item">
+                  <span class="preview-thumb p2"></span>
+                  <span class="preview-line"></span>
+                  <span class="preview-line short"></span>
+                  <span class="preview-price">C$ 320</span>
+                </span>
+                <span class="preview-item">
+                  <span class="preview-thumb p3"></span>
+                  <span class="preview-line"></span>
+                  <span class="preview-line short"></span>
+                  <span class="preview-price">C$ 180</span>
+                </span>
+                <span class="preview-item">
+                  <span class="preview-thumb p4"></span>
+                  <span class="preview-line"></span>
+                  <span class="preview-line short"></span>
+                  <span class="preview-price">C$ 650</span>
+                </span>
+              </div>
+              <div class="preview-foot">
+                <span class="preview-url">tellezsoftware.pages.dev/catalogo/mi-negocio</span>
+                <span class="preview-btn">View</span>
+              </div>
+            </div>
+
+            <div class="ui-float float-a">
+              <span class="float-icon" aria-hidden="true">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5" /></svg>
+              </span>
+              Inventory up to date
+            </div>
+
+            <div class="ui-float ui-float--reverse float-b">
+              <span class="float-icon" aria-hidden="true">
+                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1 1" /><path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1-1" /></svg>
+              </span>
+              Shareable link
+            </div>
+          </div>
         </div>
       </section>
 
       <section class="section section-muted" id="products">
         <div class="wrap">
-          <header class="section-head">
+          <header class="section-head" data-reveal style="--i: 0">
             <p class="eyebrow">Our products</p>
             <h2>TellezSoftware apps</h2>
             <p>
@@ -79,7 +133,7 @@
           </header>
 
           <div class="product-list">
-            <article class="product">
+            <article class="product ui-surface" data-reveal style="--i: 0">
               <div class="product-main">
                 <div class="product-top">
                   <span class="product-mark" aria-hidden="true">N</span>
@@ -97,6 +151,7 @@
                   <li><span aria-hidden="true">✓</span>Optimized photos and product pages built for mobile</li>
                   <li><span aria-hidden="true">✓</span>Several businesses kept separate in the same account</li>
                 </ul>
+                <span class="ui-card-accent" aria-hidden="true"></span>
               </div>
               <div class="product-aside">
                 <div class="product-actions">
@@ -107,7 +162,7 @@
               </div>
             </article>
 
-            <div class="soon">
+            <div class="soon" data-reveal style="--i: 1">
               <strong>More products on the way</strong>
               <p>
                 We are building new apps for businesses. If you need something
@@ -120,7 +175,7 @@
 
       <section class="section" id="about">
         <div class="wrap about-grid">
-          <div>
+          <div data-reveal style="--i: 0">
             <p class="eyebrow">About us</p>
             <h2>A small team, with software people actually use</h2>
             <p>
@@ -136,24 +191,30 @@
             </p>
           </div>
           <div class="pillars">
-            <article class="pillar">
+            <article class="pillar ui-surface ui-surface--static" data-reveal style="--i: 1">
+              <span class="ui-card-index" aria-hidden="true">01</span>
               <strong>Our own products</strong>
               <p>We design, build and maintain every application ourselves.</p>
+              <span class="ui-card-accent" aria-hidden="true"></span>
             </article>
-            <article class="pillar">
+            <article class="pillar ui-surface ui-surface--static" data-reveal style="--i: 2">
+              <span class="ui-card-index" aria-hidden="true">02</span>
               <strong>Direct support</strong>
               <p>You talk to the person who writes the code, with no middlemen or endless tickets.</p>
+              <span class="ui-card-accent" aria-hidden="true"></span>
             </article>
-            <article class="pillar">
+            <article class="pillar ui-surface ui-surface--static" data-reveal style="--i: 3">
+              <span class="ui-card-index" aria-hidden="true">03</span>
               <strong>Made in Nicaragua</strong>
               <p>In Spanish, with córdobas, and designed for how business really works here.</p>
+              <span class="ui-card-accent" aria-hidden="true"></span>
             </article>
           </div>
         </div>
       </section>
 
       <section class="contact" id="contact">
-        <div class="wrap">
+        <div class="wrap" data-reveal style="--i: 0">
           <p class="eyebrow">Contact</p>
           <h2>Let's talk about your business</h2>
           <p>
@@ -178,5 +239,7 @@
         </nav>
       </div>
     </footer>
+
+    <script src="/app.js" defer></script>
   </body>
 </html>

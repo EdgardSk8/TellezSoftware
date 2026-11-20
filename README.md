@@ -10,7 +10,7 @@ Sitio publicado: <https://tellezsoftware-web.pages.dev>
 
 | Ruta | Qué es |
 | --- | --- |
-| `site/` | Sitio corporativo de TellezSoftware (HTML + CSS, sin compilación) |
+| `site/` | Sitio corporativo de TellezSoftware (HTML + CSS y un script mínimo de animaciones, sin compilación) |
 | `wrangler.jsonc` | Proyecto de Cloudflare Pages que publica `site/` |
 | `TELLEZSOFTWARE.png` | Logo fuente de la marca |
 
