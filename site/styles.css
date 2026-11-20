@@ -153,7 +153,6 @@ select:focus-visible,
   place-items: center;
   width: 32px;
   height: 32px;
-  border-radius: 9px;
   background: #fff;
   border: 1px solid var(--border);
   overflow: hidden;
