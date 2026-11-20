@@ -37,6 +37,10 @@ Es estático, así que no necesita dependencias instaladas:
 npx wrangler pages dev --port 8789
 ```
 
+En Windows, `iniciar-servidor.bat` hace lo mismo con un menú: la opción 1
+levanta el servidor solo para este equipo y la opción 2 también para la red
+Wi-Fi, mostrando la IP local para abrirlo desde el celular.
+
 Queda en `http://localhost:8789`. Para exponerlo a la red local agrega
 `--ip 0.0.0.0`. Cualquier servidor estático funciona igual (`npx serve site`,
 `python -m http.server --directory site`).
