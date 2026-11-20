@@ -99,4 +99,6 @@ call npx --yes wrangler pages dev --ip 0.0.0.0 --port %PORT%
 :FIN
 echo.
 echo El servidor se detuvo.
+echo Si fue por un error, vuelve a ejecutar este archivo:
+echo limpia la cache temporal de wrangler antes de iniciar.
 pause
