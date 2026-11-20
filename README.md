@@ -75,7 +75,7 @@ en la cuenta para cuando se retome el producto:
 | Pages | `tellezsoftware` → <https://tellezsoftware.pages.dev> | Aplicación publicada |
 
 El proyecto de Pages `tellezsoftware` conserva sus variables de entorno, sus
-bindings a D1/R2 y su dominio. Ya no publica desde este repositorio: la
+bindings a D1/R2 y su dominio. Sus despliegues automáticos están pausados: la
 aplicación se publica desde `NeuboraCatalog` con
 `npx wrangler pages deploy dist --project-name tellezsoftware`.
 
