@@ -920,6 +920,159 @@ select:focus-visible,
   text-decoration: underline;
 }
 
+/* ---------- Aplicaciones, servicios y pasos ---------- */
+.group-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0 0 14px;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--ui-primary-deep);
+}
+
+.group-title::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--border);
+}
+
+.app-grid,
+.service-grid,
+.steps-grid {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: minmax(0, 1fr);
+  margin-bottom: 26px;
+}
+
+.group-note {
+  margin: -10px 0 32px;
+  font-size: 12.5px;
+  color: var(--muted);
+}
+
+.group-note a {
+  color: var(--green-deep);
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.app,
+.service,
+.step {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+  padding: 18px;
+}
+
+.app-icon,
+.service-icon {
+  display: grid;
+  place-items: center;
+  flex: 0 0 auto;
+  width: 34px;
+  height: 34px;
+  margin-bottom: 4px;
+  border: 1px solid var(--surface-edge);
+  border-radius: var(--ui-radius-compact);
+  background: var(--ui-surface);
+  color: var(--surface-accent);
+}
+
+.app h4,
+.service h3,
+.step h3 {
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.2px;
+  color: var(--heading);
+}
+
+.app h4 {
+  font-size: 14.5px;
+}
+
+.app p,
+.service p,
+.step p {
+  margin: 0 0 10px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+
+.app-status {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 6px;
+  margin-top: auto;
+  padding: 3px 9px;
+  border: 1px solid var(--ui-border);
+  border-radius: var(--ui-radius-pill);
+  background: var(--ui-surface-2);
+  color: var(--ui-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+.app-status i {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #c9a227;
+}
+
+.step-num {
+  font-family: ui-monospace, Consolas, monospace;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: var(--surface-accent);
+  opacity: 0.7;
+}
+
+.panel-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 26px 20px;
+  border: 1px solid #c4e3d5;
+  border-radius: var(--ui-radius-panel);
+  background: #ebf8f2;
+  text-align: center;
+  box-shadow: 0 18px 44px -36px #13352533;
+}
+
+.panel-cta-title {
+  margin-bottom: 6px;
+  font-size: 16px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: var(--heading);
+}
+
+.panel-cta p {
+  max-width: 62ch;
+  margin: 0 auto;
+  font-size: 13px;
+  color: #62756a;
+}
+
+.panel-cta-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 18px;
+}
+
 /* ---------- Aparición al entrar en pantalla ---------- */
 /* El estado oculto solo existe cuando el JS ya marcó el contenedor: sin JS
    el contenido se ve desde el principio. Se anima `translate`, no
@@ -939,12 +1092,14 @@ select:focus-visible,
 }
 
 /* ---------- Responsive ---------- */
-@media (max-width: 760px) {
-  .site-nav {
+@media (max-width: 900px) {
+  .site-actions .btn-cta-label {
     display: none;
   }
+}
 
-  .site-actions .btn-cta-label {
+@media (max-width: 760px) {
+  .site-nav {
     display: none;
   }
 
@@ -964,6 +1119,25 @@ select:focus-visible,
 
   .float-a {
     display: none;
+  }
+}
+
+@media (min-width: 640px) {
+  .app-grid,
+  .service-grid,
+  .steps-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 900px) {
+  .app-grid,
+  .service-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .steps-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 }
 

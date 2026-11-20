@@ -83,14 +83,22 @@ bindings a D1/R2 y su dominio. Sus despliegues automáticos están pausados: la
 aplicación se publica desde `NeuboraCatalog` con
 `npx wrangler pages deploy dist --project-name tellezsoftware`.
 
-## Agregar un producto nuevo
+## Agregar contenido
 
-1. Copia el bloque `<article class="product">` en `site/index.html` y en
-   `site/en/index.html`.
-2. Cambia nombre, descripción, funciones y el enlace al producto.
-3. Si tiene su propio dominio, apunta los botones ahí.
-4. Borra o actualiza el bloque "Más productos en camino" cuando ya haya más de
-   uno publicado.
+**Una aplicación gratis**: copia un `<article class="app ui-surface">` dentro de
+`.app-grid`, en el grupo «Gratis» de `site/index.html` y `site/en/index.html`.
+Cambia el icono, el título, la descripción y el estado («En desarrollo» o
+«Disponible»); cuando exista, agrega el enlace en la tarjeta.
+
+**Una aplicación de pago**: la tarjeta destacada es
+`<article class="product ui-surface">`, en el grupo «De pago». Duplícala para
+agregar otra y ajusta nombre, funciones y botones.
+
+**Un servicio**: copia un `<article class="service">` dentro de `.service-grid`
+y cambia el icono, el título y la descripción.
+
+Los acentos de las tarjetas (verde, magenta y rojo) los asigna el CSS solo, en
+ciclos de tres, así que no hay que elegir colores a mano.
 
 ## Enlaces a la aplicación
 
