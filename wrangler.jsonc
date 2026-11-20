@@ -1,38 +1,8 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "tellezsoftware",
-  "compatibility_date": "2026-11-12",
-  "pages_build_output_dir": "./dist",
-  "d1_databases": [
-    {
-      "binding": "DB",
-      "database_name": "tellezsoftware",
-      "database_id": "b5146cf5-5045-4bfb-b9e2-3a0e73213947",
-      "migrations_dir": "migrations"
-    }
-  ],
-  "r2_buckets": [
-    {
-      "binding": "FILES",
-      "bucket_name": "tellezsoftware-files-production"
-    }
-  ],
-  "env": {
-    "preview": {
-      "d1_databases": [
-        {
-          "binding": "DB",
-          "database_name": "tellezsoftware-preview",
-          "database_id": "dad5eac4-f082-48e6-9830-4471a50db273",
-          "migrations_dir": "migrations"
-        }
-      ],
-      "r2_buckets": [
-        {
-          "binding": "FILES",
-          "bucket_name": "tellezsoftware-files-preview"
-        }
-      ]
-    }
-  }
+  // Proyecto de Cloudflare Pages del sitio corporativo.
+  // Sitio estático: no hay compilación, se publica tal cual la carpeta `site/`.
+  "$schema": "https://unpkg.com/wrangler@4/config-schema.json",
+  "name": "tellezsoftware-web",
+  "compatibility_date": "2026-11-20",
+  "pages_build_output_dir": "./site"
 }
