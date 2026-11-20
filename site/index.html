@@ -46,6 +46,27 @@
           <a class="btn btn-primary btn-sm" href="https://tellezsoftware.pages.dev/bienvenida">
             <span class="btn-cta-label">Ver Noubora Catalog</span><span aria-hidden="true">→</span>
           </a>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Abrir menú"
+            aria-expanded="false"
+            aria-controls="menu-movil"
+            data-nav-toggle
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="site-nav-mobile" id="menu-movil" data-nav-mobile>
+        <div class="site-nav-mobile-inner">
+          <a href="#productos">Aplicaciones</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#medida">A la medida</a>
+          <a href="#nosotros">Nosotros</a>
+          <a href="#contacto">Contacto</a>
+          <a class="btn btn-primary" href="https://tellezsoftware.pages.dev/bienvenida">Ver Noubora Catalog</a>
         </div>
       </div>
     </header>
@@ -61,8 +82,8 @@
               simples, en español y listas para usarse desde el navegador.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#productos">Ver aplicaciones</a>
-              <a class="btn btn-outline" href="mailto:tellezsoftware@gmail.com">Hablar con nosotros</a>
+              <a class="btn btn-primary btn-lg" href="#productos">Ver aplicaciones</a>
+              <a class="btn btn-outline btn-lg" href="mailto:tellezsoftware@gmail.com">Hablar con nosotros</a>
             </div>
             <p class="hero-note">Hecho en Nicaragua · Soporte directo con el equipo que construye el software</p>
           </div>
@@ -289,7 +310,7 @@
               de empezar y trabajamos solo con software original.
             </p>
             <div class="panel-cta-actions">
-              <a class="btn btn-primary" href="mailto:tellezsoftware@gmail.com">Pedir cotización</a>
+              <a class="btn btn-primary btn-lg" href="mailto:tellezsoftware@gmail.com">Pedir cotización</a>
             </div>
           </div>
         </div>
@@ -344,8 +365,8 @@
               tiempo y cuánto cuesta. Sin costo y sin compromiso.
             </p>
             <div class="panel-cta-actions">
-              <a class="btn btn-primary" href="mailto:tellezsoftware@gmail.com">Contar mi idea</a>
-              <a class="btn btn-outline" href="#servicios">Ver servicios</a>
+              <a class="btn btn-primary btn-lg" href="mailto:tellezsoftware@gmail.com">Contar mi idea</a>
+              <a class="btn btn-outline btn-lg" href="#servicios">Ver servicios</a>
             </div>
           </div>
         </div>
@@ -401,8 +422,8 @@
             nueva aplicación? Escríbenos y te respondemos.
           </p>
           <div class="contact-actions">
-            <a class="btn btn-light" href="mailto:tellezsoftware@gmail.com">tellezsoftware@gmail.com</a>
-            <a class="btn btn-ghost-light" href="https://tellezsoftware.pages.dev/bienvenida">Ir a Noubora Catalog</a>
+            <a class="btn btn-light btn-lg" href="mailto:tellezsoftware@gmail.com">tellezsoftware@gmail.com</a>
+            <a class="btn btn-ghost-light btn-lg" href="https://tellezsoftware.pages.dev/bienvenida">Ir a Noubora Catalog</a>
           </div>
         </div>
       </section>
@@ -410,13 +431,47 @@
 
     <footer class="site-footer">
       <div class="wrap">
-        <span>© 2026 TellezSoftware · Nicaragua</span>
-        <nav aria-label="Enlaces del pie">
-          <a href="#productos">Aplicaciones</a>
-          <a href="#servicios">Servicios</a>
-          <a href="https://tellezsoftware.pages.dev/terminos">Términos y condiciones</a>
-          <a href="mailto:tellezsoftware@gmail.com">Contacto</a>
-        </nav>
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="/" aria-label="TellezSoftware — inicio">
+              <span class="brand-mark"><img src="/logo.png" alt="" /></span>
+              <span>Tellez<span class="brand-light">Software</span></span>
+            </a>
+            <p>Aplicaciones, servicios y software a la medida para negocios.</p>
+            <p class="footer-product">Software hecho en Nicaragua</p>
+            <a class="footer-mail" href="mailto:tellezsoftware@gmail.com">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>
+              tellezsoftware@gmail.com
+            </a>
+          </div>
+
+          <div class="footer-col">
+            <strong>Aplicaciones</strong>
+            <a href="https://tellezsoftware.pages.dev/bienvenida">Noubora Catalog</a>
+            <a href="#productos">Gratis</a>
+            <a href="#productos">De pago</a>
+          </div>
+
+          <div class="footer-col">
+            <strong>Servicios</strong>
+            <a href="#servicios">Instalación de Windows</a>
+            <a href="#servicios">Instalación de Office</a>
+            <a href="#servicios">Activación con licencia</a>
+            <a href="#medida">Software a la medida</a>
+          </div>
+
+          <div class="footer-col">
+            <strong>Empresa</strong>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+            <a href="https://tellezsoftware.pages.dev/terminos">Términos y condiciones</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 TellezSoftware · Nicaragua</span>
+          <span class="footer-stack">Hecho con HTML y CSS · Cloudflare Pages</span>
+        </div>
       </div>
     </footer>
 

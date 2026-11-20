@@ -46,6 +46,27 @@
           <a class="btn btn-primary btn-sm" href="https://tellezsoftware.pages.dev/bienvenida">
             <span class="btn-cta-label">View Noubora Catalog</span><span aria-hidden="true">→</span>
           </a>
+          <button
+            class="nav-toggle"
+            type="button"
+            aria-label="Open menu"
+            aria-expanded="false"
+            aria-controls="mobile-menu"
+            data-nav-toggle
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16" /></svg>
+          </button>
+        </div>
+      </div>
+
+      <div class="site-nav-mobile" id="mobile-menu" data-nav-mobile>
+        <div class="site-nav-mobile-inner">
+          <a href="#products">Apps</a>
+          <a href="#services">Services</a>
+          <a href="#custom">Custom</a>
+          <a href="#about">About</a>
+          <a href="#contact">Contact</a>
+          <a class="btn btn-primary" href="https://tellezsoftware.pages.dev/bienvenida">View Noubora Catalog</a>
         </div>
       </div>
     </header>
@@ -61,8 +82,8 @@
               in Spanish, and ready to use right in the browser.
             </p>
             <div class="hero-actions">
-              <a class="btn btn-primary" href="#products">See the apps</a>
-              <a class="btn btn-outline" href="mailto:tellezsoftware@gmail.com">Talk to us</a>
+              <a class="btn btn-primary btn-lg" href="#products">See the apps</a>
+              <a class="btn btn-outline btn-lg" href="mailto:tellezsoftware@gmail.com">Talk to us</a>
             </div>
             <p class="hero-note">Made in Nicaragua · Direct support from the team that builds the software</p>
           </div>
@@ -289,7 +310,7 @@
               before we start and we only work with original software.
             </p>
             <div class="panel-cta-actions">
-              <a class="btn btn-primary" href="mailto:tellezsoftware@gmail.com">Request a quote</a>
+              <a class="btn btn-primary btn-lg" href="mailto:tellezsoftware@gmail.com">Request a quote</a>
             </div>
           </div>
         </div>
@@ -344,8 +365,8 @@
               takes and what it costs. Free and with no commitment.
             </p>
             <div class="panel-cta-actions">
-              <a class="btn btn-primary" href="mailto:tellezsoftware@gmail.com">Share my idea</a>
-              <a class="btn btn-outline" href="#services">See services</a>
+              <a class="btn btn-primary btn-lg" href="mailto:tellezsoftware@gmail.com">Share my idea</a>
+              <a class="btn btn-outline btn-lg" href="#services">See services</a>
             </div>
           </div>
         </div>
@@ -400,8 +421,8 @@
             and we will get back to you.
           </p>
           <div class="contact-actions">
-            <a class="btn btn-light" href="mailto:tellezsoftware@gmail.com">tellezsoftware@gmail.com</a>
-            <a class="btn btn-ghost-light" href="https://tellezsoftware.pages.dev/bienvenida">Go to Noubora Catalog</a>
+            <a class="btn btn-light btn-lg" href="mailto:tellezsoftware@gmail.com">tellezsoftware@gmail.com</a>
+            <a class="btn btn-ghost-light btn-lg" href="https://tellezsoftware.pages.dev/bienvenida">Go to Noubora Catalog</a>
           </div>
         </div>
       </section>
@@ -409,13 +430,47 @@
 
     <footer class="site-footer">
       <div class="wrap">
-        <span>© 2026 TellezSoftware · Nicaragua</span>
-        <nav aria-label="Footer links">
-          <a href="#products">Apps</a>
-          <a href="#services">Services</a>
-          <a href="https://tellezsoftware.pages.dev/terminos?lang=en">Terms and conditions</a>
-          <a href="mailto:tellezsoftware@gmail.com">Contact</a>
-        </nav>
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a class="brand" href="/en/" aria-label="TellezSoftware — home">
+              <span class="brand-mark"><img src="/logo.png" alt="" /></span>
+              <span>Tellez<span class="brand-light">Software</span></span>
+            </a>
+            <p>Apps, services and custom software for businesses.</p>
+            <p class="footer-product">Software made in Nicaragua</p>
+            <a class="footer-mail" href="mailto:tellezsoftware@gmail.com">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m22 7-8.991 5.727a2 2 0 0 1-2.009 0L2 7" /><rect x="2" y="4" width="20" height="16" rx="2" /></svg>
+              tellezsoftware@gmail.com
+            </a>
+          </div>
+
+          <div class="footer-col">
+            <strong>Apps</strong>
+            <a href="https://tellezsoftware.pages.dev/bienvenida">Noubora Catalog</a>
+            <a href="#products">Free</a>
+            <a href="#products">Paid</a>
+          </div>
+
+          <div class="footer-col">
+            <strong>Services</strong>
+            <a href="#services">Windows installation</a>
+            <a href="#services">Office installation</a>
+            <a href="#services">License activation</a>
+            <a href="#custom">Custom software</a>
+          </div>
+
+          <div class="footer-col">
+            <strong>Company</strong>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+            <a href="https://tellezsoftware.pages.dev/terminos?lang=en">Terms and conditions</a>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <span>© 2026 TellezSoftware · Nicaragua</span>
+          <span class="footer-stack">Built with HTML and CSS · Cloudflare Pages</span>
+        </div>
       </div>
     </footer>
 

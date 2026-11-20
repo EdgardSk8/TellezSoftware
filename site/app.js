@@ -24,3 +24,26 @@ if (
   root.dataset.revealReady = 'true'
   targets.forEach((target) => observer.observe(target))
 }
+
+// Menú del navbar en pantallas pequeñas.
+const navToggle = document.querySelector('[data-nav-toggle]')
+const navPanel = document.querySelector('[data-nav-mobile]')
+
+if (navToggle && navPanel) {
+  const setNavOpen = (open) => {
+    navPanel.classList.toggle('is-open', open)
+    navToggle.setAttribute('aria-expanded', String(open))
+  }
+
+  navToggle.addEventListener('click', () => {
+    setNavOpen(!navPanel.classList.contains('is-open'))
+  })
+
+  navPanel.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => setNavOpen(false))
+  })
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') setNavOpen(false)
+  })
+}
