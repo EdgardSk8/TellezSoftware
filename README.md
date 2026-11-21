@@ -11,6 +11,8 @@ Sitio publicado: <https://tellezsoftware.pages.dev>
 | Ruta | Qué es |
 | --- | --- |
 | `site/` | Sitio corporativo de TellezSoftware (HTML + CSS y un script mínimo de animaciones, sin compilación) |
+| `site/aplicaciones/` | Lista completa de aplicaciones: gratis y de pago |
+| `site/cotizacion/` | Cotizador: paquetes con precio, pedido personalizado y resumen |
 | `wrangler.jsonc` | Proyecto de Cloudflare Pages que publica `site/` |
 | `TELLEZSOFTWARE.png` | Logo fuente de la marca |
 
@@ -86,9 +88,10 @@ aplicación se publica desde `NeuboraCatalog` con
 ## Agregar contenido
 
 **Una aplicación gratis**: copia un `<article class="app ui-surface">` dentro de
-`.app-grid`, en el grupo «Gratis» de `site/index.html` y `site/en/index.html`.
-Cambia el icono, el título, la descripción y el estado («En desarrollo» o
-«Disponible»); cuando exista, agrega el enlace en la tarjeta.
+`.app-grid` en `site/aplicaciones/index.html`. Cambia el icono, el título, la
+descripción y el estado («En desarrollo» o «Disponible»); cuando exista, agrega
+el enlace en la tarjeta. El inicio solo muestra un aviso con enlace a esa
+página, así que la lista puede crecer sin límite.
 
 **Una aplicación de pago**: la tarjeta destacada es
 `<article class="product ui-surface">`, en el grupo «De pago». Duplícala para
@@ -97,6 +100,12 @@ agregar otra y ajusta nombre, funciones y botones.
 **Un servicio**: copia un `<article class="service">` dentro de `.service-grid`
 y cambia el icono, el título y la descripción.
 
+**Un paquete de cotización**: cada tarjeta de `site/cotizacion/index.html` es un
+`<article class="package ui-surface" data-package="Nombre" data-price="4900">`.
+El nombre y el precio salen de esos atributos; el resumen, el total y el correo
+se arman solos en `site/cotizacion/cotizacion.js`. El pedido personalizado
+también entra al total con el presupuesto que escriba el cliente.
+
 Los acentos de las tarjetas (verde, magenta y rojo) los asigna el CSS solo, en
 ciclos de tres, así que no hay que elegir colores a mano.
 
@@ -104,5 +113,5 @@ ciclos de tres, así que no hay que elegir colores a mano.
 
 Los botones "Ver Noubora Catalog" apuntan a `https://nouboracatalog.pages.dev`.
 Cuando el producto tenga dominio propio hay que actualizarlos en
-`site/index.html` y `site/en/index.html` (hay un comentario en el HTML justo
-donde van).
+`site/index.html`, `site/en/index.html`, `site/aplicaciones/index.html` y
+`site/cotizacion/index.html` (hay un comentario en el HTML justo donde van).
