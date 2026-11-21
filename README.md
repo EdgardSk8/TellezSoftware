@@ -38,19 +38,28 @@ términos de uso de la aplicación viven en el producto, no aquí.
 
 ## Ver el sitio en local
 
-Es estático, así que no necesita dependencias instaladas:
+Es estático, así que no necesita compilación. Para ver los cambios **sin
+recargar la página a mano**:
+
+```powershell
+npx browser-sync start --server site --files "site/**/*" --port 8789 --no-open --no-notify --no-ui
+```
+
+Queda en `http://localhost:8789` y se actualiza solo: los cambios de CSS se
+aplican sin recargar y los de HTML recargan la página. Para verlo desde el
+celular, abre `http://IP-DE-TU-PC:8789` (browser-sync también escucha en la red
+local).
+
+En Windows, `iniciar-servidor.bat` ofrece las dos formas con un menú: la opción
+1 levanta ese servidor en vivo y la opción 2 levanta `wrangler pages dev`, que
+usa el mismo runtime de Cloudflare pero no recarga.
 
 ```powershell
 npx wrangler pages dev --port 8789
 ```
 
-En Windows, `iniciar-servidor.bat` hace lo mismo con un menú: la opción 1
-levanta el servidor solo para este equipo y la opción 2 también para la red
-Wi-Fi, mostrando la IP local para abrirlo desde el celular.
-
-Queda en `http://localhost:8789`. Para exponerlo a la red local agrega
-`--ip 0.0.0.0`. Cualquier servidor estático funciona igual (`npx serve site`,
-`python -m http.server --directory site`).
+Cualquier servidor estático funciona igual (`npx serve site`,
+`python -m http.server --directory site`), pero esos no recargan solos.
 
 ## Publicar
 
