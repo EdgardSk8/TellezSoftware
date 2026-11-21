@@ -178,8 +178,6 @@ select:focus-visible,
   place-items: center;
   width: 25px;
   height: 25px;
-  background: #fff;
-  border: 1px solid var(--border);
   overflow: hidden;
 }
 
@@ -1017,11 +1015,6 @@ select:focus-visible,
 
 .footer-brand .brand-light {
   color: #155135;
-}
-
-.footer-brand .brand-mark {
-  background: transparent;
-  border-color: transparent;
 }
 
 .footer-brand .brand-mark img {
