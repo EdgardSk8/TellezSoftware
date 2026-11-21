@@ -4,7 +4,7 @@ Sitio corporativo de TellezSoftware: contenedor de las aplicaciones que
 desarrollamos. Es una página **estática**, sin inicio de sesión, sin base de
 datos y sin cookies.
 
-Sitio publicado: <https://tellezsoftware-web.pages.dev>
+Sitio publicado: <https://tellezsoftware.pages.dev>
 
 ## Contenido del repositorio
 
@@ -16,7 +16,7 @@ Sitio publicado: <https://tellezsoftware-web.pages.dev>
 
 El producto **Noubora Catalog** ya no vive aquí: tiene su propio repositorio
 ([EdgardSk8/NeuboraCatalog](https://github.com/EdgardSk8/NeuboraCatalog)) y se
-publica en <https://tellezsoftware.pages.dev>.
+publica en <https://nouboracatalog.pages.dev>.
 
 ## Estructura de marca
 
@@ -48,7 +48,7 @@ Queda en `http://localhost:8789`. Para exponerlo a la red local agrega
 ## Publicar
 
 Automático: cada push a `main` compila en Cloudflare Pages con el proyecto
-`tellezsoftware-web` (comando de compilación vacío, directorio de salida `site`).
+`tellezsoftware` (comando de compilación vacío, directorio de salida `site`).
 
 Manual, si hace falta publicar sin pasar por Git:
 
@@ -60,7 +60,7 @@ Configuración del proyecto en Cloudflare Pages:
 
 | Ajuste | Valor |
 | --- | --- |
-| Nombre del proyecto | `tellezsoftware-web` |
+| Nombre del proyecto | `tellezsoftware` |
 | Repositorio | `EdgardSk8/TellezSoftware` |
 | Rama de producción | `main` |
 | Directorio raíz | *(vacío)* |
@@ -69,19 +69,19 @@ Configuración del proyecto en Cloudflare Pages:
 
 ## Recursos de Cloudflare que se conservan
 
-El catálogo se mudó a su propio repositorio, pero sus recursos siguen creados
-en la cuenta para cuando se retome el producto:
+El catálogo se mudó a su propio repositorio y hoy usa sus propios recursos
+(D1 y R2 `nouboracatalog`). Los antiguos, creados cuando el catálogo vivía aquí,
+siguen existiendo en la cuenta:
 
 | Recurso | Nombre | Para qué |
 | --- | --- | --- |
-| D1 | `tellezsoftware` (prod) y `tellezsoftware-preview` | Base de datos del catálogo |
-| R2 | `tellezsoftware-files-production` y `tellezsoftware-files-preview` | Fotos de producto |
-| Pages | `tellezsoftware` → <https://tellezsoftware.pages.dev> | Aplicación publicada |
+| D1 | `tellezsoftware` (prod) y `tellezsoftware-preview` | Base de datos del catálogo antiguo |
+| R2 | `tellezsoftware-files-production` y `tellezsoftware-files-preview` | Fotos de producto del catálogo antiguo |
+| Pages | `nouboracatalog` → <https://nouboracatalog.pages.dev> | Aplicación publicada |
 
-El proyecto de Pages `tellezsoftware` conserva sus variables de entorno, sus
-bindings a D1/R2 y su dominio. Sus despliegues automáticos están pausados: la
+El proyecto de Pages `tellezsoftware` es **este sitio corporativo**. La
 aplicación se publica desde `NeuboraCatalog` con
-`npx wrangler pages deploy dist --project-name tellezsoftware`.
+`npx wrangler pages deploy dist --project-name nouboracatalog`.
 
 ## Agregar contenido
 
@@ -102,7 +102,7 @@ ciclos de tres, así que no hay que elegir colores a mano.
 
 ## Enlaces a la aplicación
 
-Los botones "Ver Noubora Catalog" apuntan hoy a `https://tellezsoftware.pages.dev`.
+Los botones "Ver Noubora Catalog" apuntan a `https://nouboracatalog.pages.dev`.
 Cuando el producto tenga dominio propio hay que actualizarlos en
 `site/index.html` y `site/en/index.html` (hay un comentario en el HTML justo
 donde van).

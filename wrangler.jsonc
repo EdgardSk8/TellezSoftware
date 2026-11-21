@@ -2,7 +2,7 @@
   // Proyecto de Cloudflare Pages del sitio corporativo.
   // Sitio estático: no hay compilación, se publica tal cual la carpeta `site/`.
   "$schema": "https://unpkg.com/wrangler@4/config-schema.json",
-  "name": "tellezsoftware-web",
+  "name": "tellezsoftware",
   "compatibility_date": "2026-11-20",
   "pages_build_output_dir": "./site"
 }
