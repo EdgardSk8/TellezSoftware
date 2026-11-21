@@ -125,7 +125,8 @@ ciclos de tres, así que no hay que elegir colores a mano.
 
 ## Enlaces a la aplicación
 
-Los botones "Ver Noubora Catalog" apuntan a `https://nouboracatalog.pages.dev`.
-Cuando el producto tenga dominio propio hay que actualizarlos en
-`site/index.html`, `site/en/index.html`, `site/aplicaciones/index.html` y
-`site/cotizacion/index.html` (hay un comentario en el HTML justo donde van).
+Los enlaces al producto (tarjeta de Noubora Catalog, pie de página y botón del
+menú móvil) apuntan a `https://nouboracatalog.pages.dev`. Cuando el producto
+tenga dominio propio hay que actualizarlos en `site/index.html`,
+`site/en/index.html`, `site/aplicaciones/index.html` y
+`site/cotizacion/index.html`.

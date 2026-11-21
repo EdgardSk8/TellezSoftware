@@ -1558,10 +1558,6 @@ select:focus-visible,
 
 /* ---------- Responsive ---------- */
 @media (max-width: 899px) {
-  .site-actions .btn-cta-label {
-    display: none;
-  }
-
   .site-nav {
     display: none;
   }
