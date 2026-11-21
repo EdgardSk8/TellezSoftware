@@ -30,6 +30,27 @@
 html {
   scroll-behavior: smooth;
   scroll-padding-top: 70px;
+  scrollbar-width: thin;
+  scrollbar-color: var(--green) transparent;
+}
+
+/* Barra de scroll fina, como en el sitio principal */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 999px;
+  background: var(--green);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #137748;
 }
 
 body {
