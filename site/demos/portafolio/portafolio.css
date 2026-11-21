@@ -68,15 +68,17 @@ svg {
 .demo-strip {
   position: relative;
   display: flex;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 9px 16px 8px;
+  padding: 9px 12px 8px;
   border-bottom: 1px solid var(--line);
   background: #fff;
   color: var(--muted);
   font-size: 12px;
+  white-space: nowrap;
+  overflow: hidden;
   text-align: center;
 }
 
@@ -1051,6 +1053,11 @@ svg {
   .topnav a {
     padding: 6px 5px;
     font-size: 10.5px;
+  }
+
+  .demo-strip {
+    padding-inline: 8px;
+    font-size: 11px;
   }
 }
 
