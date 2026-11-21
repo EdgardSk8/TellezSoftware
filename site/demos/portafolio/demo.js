@@ -70,26 +70,3 @@ if (root) {
     sweep()
   }
 }
-
-// Menú del navbar en pantallas pequeñas.
-const navToggle = document.querySelector('[data-nav-toggle]')
-const navPanel = document.querySelector('[data-nav-panel]')
-
-if (navToggle && navPanel) {
-  const setOpen = (open) => {
-    navPanel.classList.toggle('is-open', open)
-    navToggle.setAttribute('aria-expanded', String(open))
-  }
-
-  navToggle.addEventListener('click', () => {
-    setOpen(!navPanel.classList.contains('is-open'))
-  })
-
-  navPanel.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => setOpen(false))
-  })
-
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape') setOpen(false)
-  })
-}
