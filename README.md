@@ -13,6 +13,7 @@ Sitio publicado: <https://tellezsoftware.pages.dev>
 | `site/` | Sitio corporativo de TellezSoftware (HTML + CSS y un script mínimo de animaciones, sin compilación) |
 | `site/aplicaciones/` | Lista completa de aplicaciones: gratis y de pago |
 | `site/cotizacion/` | Cotizador: paquetes con precio, pedido personalizado y resumen |
+| `site/demos/portafolio/` | Demo de portafolio: ejemplo publicado de lo que se entrega |
 | `wrangler.jsonc` | Proyecto de Cloudflare Pages que publica `site/` |
 | `TELLEZSOFTWARE.png` | Logo fuente de la marca |
 

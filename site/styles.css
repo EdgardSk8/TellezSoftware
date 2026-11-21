@@ -1348,6 +1348,10 @@ select:focus-visible,
   font-variant-numeric: tabular-nums;
 }
 
+.package-demo {
+  margin-top: 2px;
+}
+
 .package-pick {
   display: flex;
   align-items: center;
