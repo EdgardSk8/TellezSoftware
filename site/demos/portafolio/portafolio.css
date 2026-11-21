@@ -1039,25 +1039,41 @@ svg {
 }
 
 @media (max-width: 620px) {
-  .mark-name {
+  /* Se queda el nombre (más útil que el avatar) para que el navbar muestre quién es */
+  .mark .avatar {
     display: none;
+  }
+
+  .mark {
+    font-size: 13px;
   }
 
   .topnav a {
     padding: 6px 6px;
-    font-size: 11px;
+    font-size: 10.5px;
   }
 }
 
 @media (max-width: 420px) {
+  .mark {
+    font-size: 12px;
+  }
+
   .topnav a {
-    padding: 6px 5px;
-    font-size: 10.5px;
+    padding: 6px 4px;
+    font-size: 10px;
   }
 
   .demo-strip {
     padding-inline: 8px;
     font-size: 11px;
+  }
+}
+
+@media (max-width: 380px) {
+  .topnav a {
+    padding: 6px 3px;
+    font-size: 9.5px;
   }
 }
 
