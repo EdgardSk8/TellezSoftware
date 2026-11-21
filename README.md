@@ -14,6 +14,10 @@ Sitio publicado: <https://tellezsoftware.pages.dev>
 | `site/aplicaciones/` | Lista completa de aplicaciones: gratis y de pago |
 | `site/cotizacion/` | Cotizador: paquetes con precio, pedido personalizado y resumen |
 | `site/demos/portafolio/` | Demo de portafolio: ejemplo publicado de lo que se entrega |
+
+En la demo, los logos de los proyectos son marcas ficticias dibujadas para el
+ejemplo y la foto de perfil viene de StockSnap con licencia CC0 (se puede
+cambiar por la del cliente).
 | `wrangler.jsonc` | Proyecto de Cloudflare Pages que publica `site/` |
 | `TELLEZSOFTWARE.png` | Logo fuente de la marca |
 
