@@ -31,10 +31,30 @@
           <a href="#contacto">Contacto</a>
         </nav>
         <span class="place">Managua, NI</span>
+        <button
+          class="nav-toggle"
+          type="button"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="menu-demo"
+          data-nav-toggle
+        >
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        </button>
+      </div>
+
+      <div class="nav-panel" id="menu-demo" data-nav-panel>
+        <div class="shell">
+          <a href="#trabajo"><span>01</span>Trabajo</a>
+          <a href="#servicios"><span>02</span>Servicios</a>
+          <a href="#proceso"><span>03</span>Proceso</a>
+          <a href="#planes"><span>04</span>Planes</a>
+          <a href="#contacto"><span>05</span>Contacto</a>
+        </div>
       </div>
     </header>
 
-    <main>
+    <main data-reveal-root>
       <section class="hero" id="inicio">
         <div class="shell hero-grid">
           <div>
@@ -355,7 +375,6 @@
                 Escribir por WhatsApp
               </button>
             </div>
-            <p class="contact-note">Botones de ejemplo: en la versión final abren el correo y WhatsApp.</p>
           </div>
         </div>
       </section>
@@ -367,5 +386,7 @@
         <span>Ejemplo de portafolio · Nicaragua</span>
       </div>
     </footer>
+
+    <script src="/demos/portafolio/demo.js" defer></script>
   </body>
 </html>
