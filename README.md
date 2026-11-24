@@ -11,7 +11,8 @@ Sitio publicado: <https://tellezsoftware.pages.dev>
 | Ruta | Qué es |
 | --- | --- |
 | `site/` | Sitio corporativo de TellezSoftware (HTML + CSS y un script mínimo de animaciones, sin compilación) |
-| `site/aplicaciones/` | Lista completa de aplicaciones: gratis y de pago |
+| `site/aplicaciones/` | Lista completa de aplicaciones: gratis, de pago y de clientes |
+| `site/og/` | Una imagen de vista previa 1200×630 por cada página pública |
 | `site/cotizacion/` | Cotizador: paquetes con precio, pedido personalizado y resumen |
 | `site/demos/portafolio/` | Demo de portafolio: ejemplo publicado de lo que se entrega |
 
@@ -20,6 +21,7 @@ ejemplo y la foto de perfil viene de StockSnap con licencia CC0 (se puede
 cambiar por la del cliente).
 | `wrangler.jsonc` | Proyecto de Cloudflare Pages que publica `site/` |
 | `TELLEZSOFTWARE.png` | Logo fuente de la marca |
+| `DISENO-COMPARATIVO.md` | Comparación de diseño de TellezSoftware, Noubora, Credibas y la tienda, con el sistema visual propuesto |
 
 El producto **Noubora Catalog** ya no vive aquí: tiene su propio repositorio
 ([EdgardSk8/NeuboraCatalog](https://github.com/EdgardSk8/NeuboraCatalog)) y se
@@ -60,6 +62,14 @@ npx wrangler pages dev --port 8789
 
 Cualquier servidor estático funciona igual (`npx serve site`,
 `python -m http.server --directory site`), pero esos no recargan solos.
+
+## Vista previa al compartir e iconos
+
+Cada página pública tiene su propia imagen 1200×630 en `site/og/` y sus etiquetas
+`og:image` / `twitter:image`. Los iconos web y de instalación están en la raíz de
+`site/` (`favicon.ico`, `favicon.svg`, 16/32, `apple-touch-icon.png`, 192/512,
+maskable, `site.webmanifest` y `browserconfig.xml`). Las reglas completas están en
+[`../REGLAS-BASICAS-OBLIGATORIAS.md`](../REGLAS-BASICAS-OBLIGATORIAS.md).
 
 ## Publicar
 
@@ -110,6 +120,13 @@ página, así que la lista puede crecer sin límite.
 **Una aplicación de pago**: la tarjeta destacada es
 `<article class="product ui-surface">`, en el grupo «De pago». Duplícala para
 agregar otra y ajusta nombre, funciones y botones.
+
+**Una aplicación de clientes**: usa la misma tarjeta `<article class="product
+ui-surface">` dentro de la sección `#clientes`, pero con
+`<span class="product-mark product-mark--logo">` y el logo del cliente en
+`site/aplicaciones/` (por ejemplo, `tellezstorenic.png`). La clase
+`product-mark--logo` pinta la ficha de blanco y ajusta la imagen con
+`object-fit: contain`; conviene un PNG o WebP cuadrado con fondo transparente.
 
 **Un servicio**: copia un `<article class="service">` dentro de `.service-grid`
 y cambia el icono, el título y la descripción.
