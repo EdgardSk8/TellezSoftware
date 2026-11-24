@@ -3,6 +3,23 @@
    Sistema de superficies, botones y movimiento (guía de contenedores).
    ========================================================================== */
 
+/* Tipografía compartida con Credibas: Sora para títulos, Manrope para texto. */
+@font-face {
+  font-family: 'Sora Variable';
+  src: url('/fonts/sora-latin-wght-normal.woff2') format('woff2-variations');
+  font-weight: 100 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Manrope Variable';
+  src: url('/fonts/manrope-latin-wght-normal.woff2') format('woff2-variations');
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
 :root {
   /* Superficie */
   --ui-bg: #f6fdfa;
@@ -13,6 +30,10 @@
   --ui-muted: #7c8b82;
   --ui-border: #e0eee7;
   --ui-border-soft: #eef6f3;
+
+  /* Tipografía */
+  --ui-font-display: 'Sora Variable', 'Sora', 'Segoe UI', system-ui, sans-serif;
+  --ui-font-sans: 'Manrope Variable', 'Manrope', 'Segoe UI', system-ui, -apple-system, sans-serif;
 
   /* Marca */
   --ui-primary: #1db973;
@@ -105,12 +126,20 @@ html {
 }
 
 body {
-  font-family: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--ui-font-sans);
   font-size: 15px;
   line-height: 1.6;
   color: var(--ink);
   background: var(--bg);
   -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+.brand {
+  font-family: var(--ui-font-display);
 }
 
 a {

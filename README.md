@@ -21,7 +21,6 @@ ejemplo y la foto de perfil viene de StockSnap con licencia CC0 (se puede
 cambiar por la del cliente).
 | `wrangler.jsonc` | Proyecto de Cloudflare Pages que publica `site/` |
 | `TELLEZSOFTWARE.png` | Logo fuente de la marca |
-| `DISENO-COMPARATIVO.md` | Comparación de diseño de TellezSoftware, Noubora, Credibas y la tienda, con el sistema visual propuesto |
 
 El producto **Noubora Catalog** ya no vive aquí: tiene su propio repositorio
 ([EdgardSk8/NeuboraCatalog](https://github.com/EdgardSk8/NeuboraCatalog)) y se
@@ -65,11 +64,15 @@ Cualquier servidor estático funciona igual (`npx serve site`,
 
 ## Vista previa al compartir e iconos
 
+La tipografía del sitio es **Sora** (títulos y marca) + **Manrope** (texto),
+servida desde `site/fonts/`.
+
 Cada página pública tiene su propia imagen 1200×630 en `site/og/` y sus etiquetas
 `og:image` / `twitter:image`. Los iconos web y de instalación están en la raíz de
 `site/` (`favicon.ico`, `favicon.svg`, 16/32, `apple-touch-icon.png`, 192/512,
 maskable, `site.webmanifest` y `browserconfig.xml`). Las reglas completas están en
-[`../REGLAS-BASICAS-OBLIGATORIAS.md`](../REGLAS-BASICAS-OBLIGATORIAS.md).
+[`../REGLAS-BASICAS-OBLIGATORIAS.md`](../REGLAS-BASICAS-OBLIGATORIAS.md) y el
+análisis de diseño en [`../DISENO-COMPARATIVO.md`](../DISENO-COMPARATIVO.md).
 
 ## Publicar
 
